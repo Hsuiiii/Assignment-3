@@ -1,21 +1,5 @@
-$('.emoji').click(function(){
-  var emoji = $(this).text();
-  var text = $('textarea').val();
-  $('textarea').val(text+emoji)
-});
-
-function myFunction() {
-  var copyText = document.getElementById("imput");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  alert("Copied the text: " + copyText.value);
-}
-
-
-
-
-consoleText(['Welcome to the star creator, using your imagination and creativity to make your own constellation.', 'If you are ready, we can start now.'], 'text',['white']);
+ 
+ consoleText(['Welcome to the star creator!', 'Using emojis and your creativity to make your constellation.', 'If you are ready, we can start now.'], 'text',['white']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
@@ -40,14 +24,14 @@ function consoleText(words, id, colors) {
         target.setAttribute('style', 'color:' + colors[0])
         letterCount += x;
         waiting = false;
-      }, 1000)
+      }, 1500)
     } else if (letterCount === words[0].length + 1 && waiting === false) {
       waiting = true;
       window.setTimeout(function() {
         x = -1;
         letterCount += x;
         waiting = false;
-      }, 1000)
+      }, 1500)
     } else if (waiting === false) {
       target.innerHTML = words[0].substring(0, letterCount)
       letterCount += x;
@@ -63,5 +47,9 @@ function consoleText(words, id, colors) {
 
       visible = true;
     }
-  }, 400)
+  }, 800)
 }
+
+
+
+
